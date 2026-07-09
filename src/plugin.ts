@@ -492,6 +492,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-vehicle-vin',
+      name: 'faker.vehicle.vin',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.vehicle.vin());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
