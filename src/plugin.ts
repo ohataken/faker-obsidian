@@ -508,6 +508,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-vehicle-model',
+      name: 'faker.vehicle.model',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.vehicle.model());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
