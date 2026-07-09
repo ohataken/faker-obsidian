@@ -100,6 +100,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-date-birthdate',
+      name: 'faker.date.birthdate',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.date.birthdate().toISOString());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
