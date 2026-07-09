@@ -44,6 +44,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-commerce-upc',
+      name: 'faker.commerce.upc',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.commerce.upc());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
