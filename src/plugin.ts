@@ -1,11 +1,17 @@
 import { Plugin } from 'obsidian';
-import { DEFAULT_SETTINGS, FakerObsidianSettings } from './settings';
+import {
+  DEFAULT_SETTINGS,
+  FakerObsidianSettings,
+  FakerObsidianSettingTab,
+} from './settings';
 
 export default class FakerObsidianPlugin extends Plugin {
   settings!: FakerObsidianSettings;
 
   async onload() {
     await this.loadSettings();
+
+    this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
   onunload() {}
