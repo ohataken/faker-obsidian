@@ -276,6 +276,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-location-city',
+      name: 'faker.location.city',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.location.city());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
