@@ -4,6 +4,7 @@
   "description": "Use Faker from Obsidian slash commands.",
   "type": "module",
   "scripts": {
+    "build": "node esbuild.config.mjs",
     "lint": "eslint .",
     "typecheck": "tsc -noEmit -skipLibCheck"
   },
