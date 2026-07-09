@@ -236,6 +236,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-ipv4',
+      name: 'faker.internet.ipv4',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.ipv4());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
