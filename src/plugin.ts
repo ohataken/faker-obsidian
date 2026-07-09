@@ -108,6 +108,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-finance-credit-card-number',
+      name: 'faker.finance.creditCardNumber',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.finance.creditCardNumber());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
