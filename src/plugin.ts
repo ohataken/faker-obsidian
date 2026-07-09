@@ -444,6 +444,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-string-hexadecimal',
+      name: 'faker.string.hexadecimal',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.string.hexadecimal());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
