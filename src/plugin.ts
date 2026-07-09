@@ -1,4 +1,5 @@
-import { Plugin } from 'obsidian';
+import { faker } from '@faker-js/faker';
+import { Editor, Plugin } from 'obsidian';
 import {
   DEFAULT_SETTINGS,
   FakerObsidianSettings,
@@ -10,6 +11,14 @@ export default class FakerObsidianPlugin extends Plugin {
 
   async onload() {
     await this.loadSettings();
+
+    this.addCommand({
+      id: 'faker-commerce-product-name',
+      name: 'faker.commerce.productName',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.commerce.productName());
+      },
+    });
 
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
