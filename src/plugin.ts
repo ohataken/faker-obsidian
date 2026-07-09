@@ -412,6 +412,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-string-ulid',
+      name: 'faker.string.ulid',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.string.ulid());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
