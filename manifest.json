@@ -1,0 +1,11 @@
+{
+  "id": "faker-obsidian",
+  "name": "Faker",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Use Faker from Obsidian slash commands.",
+  "author": "ohataken",
+  "authorUrl": "https://github.com/ohataken",
+  "fundingUrl": "https://github.com/ohataken/faker-obsidian",
+  "isDesktopOnly": false
+}
