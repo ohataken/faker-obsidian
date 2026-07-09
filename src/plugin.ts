@@ -172,6 +172,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-git-commit-message',
+      name: 'faker.git.commitMessage',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.git.commitMessage());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
