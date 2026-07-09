@@ -20,6 +20,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-commerce-product-description',
+      name: 'faker.commerce.productDescription',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.commerce.productDescription());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
