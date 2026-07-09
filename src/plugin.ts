@@ -380,6 +380,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-person-job-title',
+      name: 'faker.person.jobTitle',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.person.jobTitle());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
