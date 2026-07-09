@@ -124,6 +124,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-finance-iban',
+      name: 'faker.finance.iban',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.finance.iban());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
