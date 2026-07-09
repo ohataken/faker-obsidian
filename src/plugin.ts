@@ -188,6 +188,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-email',
+      name: 'faker.internet.email',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.email());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
