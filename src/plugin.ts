@@ -180,6 +180,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-username',
+      name: 'faker.internet.username',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.username());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
