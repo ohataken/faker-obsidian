@@ -388,6 +388,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-person-bio',
+      name: 'faker.person.bio',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.person.bio());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
