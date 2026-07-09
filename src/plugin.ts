@@ -292,6 +292,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-location-street-address',
+      name: 'faker.location.streetAddress',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.location.streetAddress());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
