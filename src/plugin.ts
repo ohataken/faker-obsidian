@@ -212,6 +212,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-url',
+      name: 'faker.internet.url',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.url());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
