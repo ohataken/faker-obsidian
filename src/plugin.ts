@@ -468,6 +468,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-system-mime-type',
+      name: 'faker.system.mimeType',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.system.mimeType());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
