@@ -68,6 +68,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-company-buzz-phrase',
+      name: 'faker.company.buzzPhrase',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.company.buzzPhrase());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
