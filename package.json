@@ -1,0 +1,10 @@
+{
+  "name": "faker-obsidian-plugin",
+  "version": "1.0.0",
+  "description": "Use Faker from Obsidian slash commands.",
+  "type": "module",
+  "scripts": {},
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
