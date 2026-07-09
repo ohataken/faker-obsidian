@@ -140,6 +140,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-finance-bitcoin-address',
+      name: 'faker.finance.bitcoinAddress',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.finance.bitcoinAddress());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
