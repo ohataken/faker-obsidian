@@ -60,6 +60,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-company-catch-phrase',
+      name: 'faker.company.catchPhrase',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.company.catchPhrase());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
