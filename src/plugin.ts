@@ -116,6 +116,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-finance-credit-card-cvv',
+      name: 'faker.finance.creditCardCVV',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.finance.creditCardCVV());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
