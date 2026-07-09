@@ -428,6 +428,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-string-alphanumeric',
+      name: 'faker.string.alphanumeric',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.string.alphanumeric());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
