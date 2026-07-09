@@ -220,6 +220,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-domain-name',
+      name: 'faker.internet.domainName',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.domainName());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
