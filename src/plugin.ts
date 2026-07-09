@@ -268,6 +268,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-emoji',
+      name: 'faker.internet.emoji',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.emoji());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
