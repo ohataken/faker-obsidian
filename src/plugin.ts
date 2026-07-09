@@ -156,6 +156,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-git-branch',
+      name: 'faker.git.branch',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.git.branch());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
