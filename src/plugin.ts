@@ -84,6 +84,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-date-future',
+      name: 'faker.date.future',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.date.future().toISOString());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
