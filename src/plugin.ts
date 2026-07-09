@@ -420,6 +420,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-string-nanoid',
+      name: 'faker.string.nanoid',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.string.nanoid());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
