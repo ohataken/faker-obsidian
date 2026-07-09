@@ -308,6 +308,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-location-latitude',
+      name: 'faker.location.latitude',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(String(faker.location.latitude()));
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
