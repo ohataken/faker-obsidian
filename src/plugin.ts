@@ -476,6 +476,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-system-semver',
+      name: 'faker.system.semver',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.system.semver());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
