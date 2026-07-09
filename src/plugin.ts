@@ -52,6 +52,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-company-name',
+      name: 'faker.company.name',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.company.name());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
