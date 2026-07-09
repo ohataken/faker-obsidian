@@ -164,6 +164,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-git-commit-sha',
+      name: 'faker.git.commitSha',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.git.commitSha());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
