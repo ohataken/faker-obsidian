@@ -300,6 +300,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-location-zip-code',
+      name: 'faker.location.zipCode',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.location.zipCode());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
