@@ -36,6 +36,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-commerce-isbn',
+      name: 'faker.commerce.isbn',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.commerce.isbn());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
