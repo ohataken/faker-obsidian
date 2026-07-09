@@ -396,6 +396,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-phone-number',
+      name: 'faker.phone.number',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.phone.number());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
