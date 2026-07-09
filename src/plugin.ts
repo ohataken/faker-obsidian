@@ -132,6 +132,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-finance-bic',
+      name: 'faker.finance.bic',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.finance.bic());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
