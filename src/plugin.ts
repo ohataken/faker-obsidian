@@ -284,6 +284,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-location-country',
+      name: 'faker.location.country',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.location.country());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
