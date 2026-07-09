@@ -460,6 +460,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-system-file-path',
+      name: 'faker.system.filePath',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.system.filePath());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
