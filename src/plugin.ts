@@ -316,6 +316,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-location-longitude',
+      name: 'faker.location.longitude',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(String(faker.location.longitude()));
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
