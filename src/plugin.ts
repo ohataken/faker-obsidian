@@ -332,6 +332,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-lorem-words',
+      name: 'faker.lorem.words',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.lorem.words());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
