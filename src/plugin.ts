@@ -92,6 +92,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-date-past',
+      name: 'faker.date.past',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.date.past().toISOString());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
