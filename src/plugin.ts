@@ -228,6 +228,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-ip',
+      name: 'faker.internet.ip',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.ip());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
