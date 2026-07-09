@@ -148,6 +148,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-finance-ethereum-address',
+      name: 'faker.finance.ethereumAddress',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.finance.ethereumAddress());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
