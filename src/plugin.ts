@@ -260,6 +260,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-user-agent',
+      name: 'faker.internet.userAgent',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.userAgent());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
