@@ -204,6 +204,14 @@ export default class FakerObsidianPlugin extends Plugin {
       },
     });
 
+    this.addCommand({
+      id: 'faker-internet-password',
+      name: 'faker.internet.password',
+      editorCallback: (editor: Editor) => {
+        editor.replaceSelection(faker.internet.password());
+      },
+    });
+
     this.addSettingTab(new FakerObsidianSettingTab(this.app, this));
   }
 
