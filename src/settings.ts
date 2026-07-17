@@ -1,10 +1,13 @@
 import { App, PluginSettingTab } from 'obsidian';
 import type FakerObsidianPlugin from './plugin';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface FakerObsidianSettings {}
+export interface FakerObsidianSettings {
+  enabledCommands: Record<string, boolean>;
+}
 
-export const DEFAULT_SETTINGS: FakerObsidianSettings = {};
+export const DEFAULT_SETTINGS: FakerObsidianSettings = {
+  enabledCommands: {},
+};
 
 export class FakerObsidianSettingTab extends PluginSettingTab {
   plugin: FakerObsidianPlugin;

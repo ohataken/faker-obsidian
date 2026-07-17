@@ -521,11 +521,17 @@ export default class FakerObsidianPlugin extends Plugin {
 
   onunload() {}
 
+  isCommandEnabled(id: string): boolean {
+    return this.settings.enabledCommands[id] ?? true;
+  }
+
   async loadSettings() {
-    this.settings = Object.assign(
+    const data = (await this.loadData()) as Partial<FakerObsidianSettings>;
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, data);
+    this.settings.enabledCommands = Object.assign(
       {},
-      DEFAULT_SETTINGS,
-      (await this.loadData()) as Partial<FakerObsidianSettings>,
+      DEFAULT_SETTINGS.enabledCommands,
+      data?.enabledCommands,
     );
   }
 
