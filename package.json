@@ -1,7 +1,7 @@
 {
   "name": "faker-obsidian-plugin",
   "version": "1.0.0",
-  "description": "Use Faker from Obsidian slash commands.",
+  "description": "a set of Obsidian commands for the Faker.js API",
   "type": "module",
   "scripts": {
     "build": "node esbuild.config.mjs",
