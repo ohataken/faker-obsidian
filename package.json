@@ -17,7 +17,7 @@
     "globals": "^17.14.0",
     "obsidian": "latest",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.72.2"
+    "typescript-eslint": "^8.73.0"
   },
   "dependencies": {
     "@faker-js/faker": "^10.6.0"
